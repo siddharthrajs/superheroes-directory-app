@@ -1,0 +1,46 @@
+{
+  "name": "superheroes-directory",
+  "version": "1.0.0",
+  "description": "A full-stack superheroes directory application with React frontend and Node.js backend",
+  "private": true,
+  "workspaces": [
+    "superheroes-frontend",
+    "superheroes-backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd superheroes-frontend && npm run dev",
+    "dev:backend": "cd superheroes-backend && npm run dev",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd superheroes-frontend && npm run preview",
+    "start:backend": "cd superheroes-backend && npm start",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd superheroes-frontend && npm run build",
+    "install:all": "npm install && cd superheroes-frontend && npm install && cd ../superheroes-backend && npm install",
+    "seed": "cd superheroes-backend && npm run seed",
+    "lint": "cd superheroes-frontend && npm run lint",
+    "clean": "rm -rf node_modules superheroes-frontend/node_modules superheroes-backend/node_modules superheroes-frontend/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siddharthrajs/superheroes-directory.git"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "express",
+    "mongodb",
+    "typescript",
+    "superheroes",
+    "full-stack"
+  ],
+  "author": "Siddharth Raj",
+  "license": "MIT"
+}
